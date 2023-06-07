@@ -1,0 +1,97 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 navbar-dark bg-dark">
+        <img src="{% static 'img/download.jpg' %} " height="50" width="80">
+        <a class="navbar-brand" href="#"></a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading2">About-Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading2">infrastrure</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading3">Contact-us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'enroll' %}">Enrolled-students</a>
+          </li>
+        </ul>
+      </nav>
+  </header>
+  <main>
+    <form method="get">
+      <input type="text" name="search">
+      <button type="search">Search</button>
+    </form>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">phone number</th>
+            <th scope="col">Address</th>
+            <th scope="col">Course</th>
+            <th scope="col">Percentage</th>
+            <th scope="col">photos</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for enrol in task %}
+          <tr>
+            <td>{{enrol.first_name}}</td>
+            <td>{{enrol.last_name}}</td>
+            <td>{{enrol.username}}</td>
+            <td>{{enrol.email}}</td>
+            <td>{{enrol.phone_number}}</td>
+            <td>{{enrol.address}}</td>
+            <td>{{enrol.Course}}</td>
+            <td>{{enrol.Percentage}}</td>
+            {% if enrol.photo %}
+            <td><img src="{{ enrol.photo.url }} " width="100" height="100"></td>
+            {% else %}
+            <td><img src="{% static 'img/png-transparent-computer-icons-user-profile-avatar-profile-heroes-black-profile-thumbnail.png' %}" height="100" width="100"></td>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

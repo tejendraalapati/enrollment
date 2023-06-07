@@ -1,0 +1,137 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+<style>
+    h1{
+        background-color: aqua;
+        padding: 10;
+        margin: 0;
+        opacity: 10px;
+    }
+    body{
+        background-image:url('/static/img/3915891.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<body>
+  <header>
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 navbar-dark bg-dark">
+        <img src="{% static 'img/download.jpg' %} " height="50" width="80">
+        <a class="navbar-brand" href="#"></a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading1">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading2">About-Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading2">infrastrure</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading3">Contact-us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'enroll' %}">Enrolled-students</a>
+          </li>
+        </ul>
+      </nav>
+  
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'img/Student-Internship.jpg' %}" class="d-block w-100" height="500"  alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/Summer-Internships-for-College-Students-in-India-Body-Image.jpg' %}" class="d-block w-100" height="500" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/fp-summer-program-internship-2.jpg' %}" class="d-block w-100" height="500" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      </header>
+    <main>
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+        <h1 id="scrollspyHeading1" align="center">About-Us</h1>
+        <p><i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore fuga ad atque quaerat labore iusto neque quasi quae. Repudiandae repellat corrupti quasi pariatur praesentium distinctio molestias maxime architecto repellendus reiciendis.
+            An internship is a period of work experience offered by an organization for a limited period of time.Once confined to medical graduates, internship is used practice for a wide range of placements in businesses, non-profit organizations and government agencies.
+            They are typically undertaken by students and graduates looking to gain relevant skills and experience in a particular field. Employers benefit from these placements because they often recruit employees from their best interns, who have known capabilities, thus saving time and money in the long run. 
+            Internships are usually arranged by third-party organizations that recruit interns on behalf of industry groups. Rules vary from country to country about when interns should be regarded as employees. The system can be open to exploitation by unscrupulous employers.
+        Internships for professional careers are similar in some ways. Similar to internships, apprenticeships transition students from vocational school into the workforce. The lack of standardization and oversight leaves the term "internship" open to broad interpretation. Interns may be high school students, college and university students, or post-graduate adults. 
+        These positions may be paid or unpaid and are temporary Many large corporations, particularly investment banks, have "insights" programs that serve as a pre-internship event numbering a day to a week, either in person or virtually.</i>
+</p>
+        <h1 id="scrollspyHeading2" align="center">infrastrure</h1>
+            <div class="carousel-inner">
+                <img src="{% static 'img/infrastructure.jpg' %}" class="d-block w-100"  height="500" alt="...">
+            </div>
+            <p><i>A company is an organization that produces products or services, and it may include public or private entities. Some companies are called conglomerates (one unit is for making money, another for charity).
+                Most companies will perform activities like production, distribution, and marketing. Companies can produce a wide range of products – food, sports goods, clothes, medicines, etc. They also provide various services.
+                Some of these companies are world-famous, like Nestle, Adidas, Google, and Apple. These food and technology companies have widespread distribution networks.
+                Generally, big companies can produce anything, but small companies usually make one product or service (i.e., Levi’s). Many small companies will collaborate with other small companies to provide a complete service or product.
+                “Infrastructure is the foundation of any company; it’s the basic structure that all companies are built on.”
+                While highly accurate, this definition may apply not only to companies but also to other sectors. Here are some more specifics to offer better insight into what makes up company infrastructure: What do effective communication systems, fax machines, printers, cabling, and networking have in common? They are all part of the company’s infrastructure.</i>
+            </p>
+          </div>
+        <h1 id="scrollspyHeading3" align="center">Contact-us</h1>
+        <form  method="post">
+          {% csrf_token  %}
+          <div class="mb-3">
+            <label for="title">Name:</label>
+            <input type="text" class="form-control" id="title" name="name" aria-describedby="titleHelp">
+          </div>
+          <div class="mb-3">
+            <label for="title">Email:</label>
+            <input type="text" class="form-control" id="title" name="email" aria-describedby="titleHelp">
+          </div>
+          <div class="mb-3">
+            <label for="title">Phone number</label>
+            <input type="text" class="form-control" id="title" name="phone" aria-describedby="titleHelp">
+          </div>
+          <div class="mb-3">
+            <label for="desc">Message:</label>
+            <textarea class="form-control" name="message" id="desc" cols="30" rows="10"></textarea>
+
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+     </div>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
